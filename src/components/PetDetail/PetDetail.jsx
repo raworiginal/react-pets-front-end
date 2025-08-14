@@ -1,7 +1,21 @@
 const PetDetail = (props) => {
+	if (!props.selected) return <h3>No details</h3>;
 	return (
 		<>
-			<h1>Place Holder</h1>
+			<div>
+				<h1>{props.selected.name}</h1>
+				<h2>
+					Age: {props.selected.age} year{props.selected.age > 1 ? "s" : ""} old
+				</h2>
+				<div>
+					<button onClick={() => props.handleFormView(props.selected)}>
+						Edit Pet
+					</button>
+					<button onClick={() => props.handleDeletePet(props.selected._id)}>
+						Delete Pet
+					</button>
+				</div>
+			</div>
 		</>
 	);
 };

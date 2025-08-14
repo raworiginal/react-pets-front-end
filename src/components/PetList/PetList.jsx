@@ -1,4 +1,4 @@
-const PetList = ({ pets, handleSelect }) => {
+const PetList = ({ pets, handleSelect, handleFormView, isFormOpen }) => {
 	return (
 		<div>
 			<h1>Pet List</h1>
@@ -20,6 +20,9 @@ const PetList = ({ pets, handleSelect }) => {
 					</ul>
 				)}
 			</div>
+			<button onClick={handleFormView}>
+				{isFormOpen ? "close form" : "New Pet"}
+			</button>
 		</div>
 	);
 };
